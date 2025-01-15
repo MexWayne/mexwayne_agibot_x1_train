@@ -50,7 +50,7 @@ from threading import Thread
 
 
 x_vel_cmd, y_vel_cmd, yaw_vel_cmd = 0.0, 0.0, 0.0
-joystick_use = True
+joystick_use = False
 joystick_opened = False
 
 if joystick_use:
