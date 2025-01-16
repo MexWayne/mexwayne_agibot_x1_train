@@ -47,6 +47,7 @@
 - onnx模型会存在 ```log/exported_policies/<date_time>```
 - 举例: python scripts/export_onnx_dh.py --task=x1_dh_stand --load_run=2025-01-16_20-10-19 --checkpoint=-1 --headless
 - 注意：这里onnx 模型需要在 生成 jit 模型之后生成，且因为 生了 jit 模型，时间就变了名称也变了，所以要重新输入这个名字, 且就算你加了run_name也没用
+- 
 ![](doc/x1_policy.onnx.png)
 #### 参数说明：
 - task: Task name
