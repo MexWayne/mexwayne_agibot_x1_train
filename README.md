@@ -37,10 +37,14 @@ This project is about the reinforcement learning training code used by AgiBot X1
 #### Generate the JIT Model:
 ``` python scripts/export_policy_dh.py --task=x1_dh_stand --load_run=<date_time><run_name>  ```
 - The JIT model will be saved in ``` log/exported_policies/<date_time>```
+- e.g: python scripts/export_policy_dh.py --task=x1_dh_stand --load_run=2025-01-16_17-12-14wzx_test --checkpoint=-1 --headless
+- notion: the time log is different from I write the noted before, cause I have continued trainning the 01-15 model
 
 #### Generate the ONNX Model:
 ``` python scripts/export_onnx_dh.py --task=x1_dh_stand --load_run=<date_time>  ```
 - The ONNX model will be saved at ```log/exported_policies/<date_time>```
+- e.g: python scripts/export_onnx_dh.py --task=x1_dh_stand --load_run=2025-01-16_20-10-19 --checkpoint=-1 --headless
+- notion:if you want a onnx model, you must generate a JIT model fisrt, and the time will be an anther form. Even if you add the run_name to the command , the run_name will not be added to the path
 
 #### Parameter Descriptions:
 - task: Task name
