@@ -27,10 +27,13 @@ This project is about the reinforcement learning training code used by AgiBot X1
 ```python scripts/train.py --task=x1_dh_stand --run_name=<run_name> --headless```
 - The trained model will be saved in `/log/<experiment_name>/exported_data/<date_time><run_name>/model_<iteration>.pt`, where `<experiment_name>` is defined in the config file.
 ![](doc/train.gif)
-
+- common trainning: python scripts/train.py --task=x1_dh_stand --run_name=wzx_test --headless
+- continue trainning: python scripts/train.py --task=x1_dh_stand --load_run=2025-01-15_14-20-52wzx_test --checkpoint=-1 --resume --run_name=wzx_test --headless
+- notion that: adding the headless into the cmd will make the trainning without showing the real-time video, if not, it will easily run out of the gpu memory.
 #### Play:
 ```python /scripts/play.py --task=x1_dh_stand --load_run=<date_time><run_name>```
 ![](doc/play.gif)
+- e.g: python ./scripts/play.py --task=x1_dh_stand --load_run=2025-01-15_14-20-52wzx_test
 #### Generate the JIT Model:
 ``` python scripts/export_policy_dh.py --task=x1_dh_stand --load_run=<date_time><run_name>  ```
 - The JIT model will be saved in ``` log/exported_policies/<date_time>```

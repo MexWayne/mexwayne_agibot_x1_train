@@ -29,11 +29,13 @@
 ```python scripts/train.py --task=x1_dh_stand --run_name=<run_name> --headless```
 - 训练好的模型会存`/log/<experiment_name>/exported_data/<date_time><run_name>/model_<iteration>.pt` 其中 `<experiment_name>` 在config文件中定义.
 ![](doc/train.gif)
-
+- e.g: python scripts/train.py --task=x1_dh_stand --run_name=wzx_test --headless
 #### Play:
 ```python /scripts/play.py --task=x1_dh_stand --load_run=<date_time><run_name>```
 ![](doc/play.gif)
-
+- 一般训练: python ./scripts/play.py --task=x1_dh_stand --load_run=2025-01-15_14-20-52wzx_test --headless
+- 继续训练: python scripts/train.py --task=x1_dh_stand --load_run=2025-01-15_14-20-52wzx_test --checkpoint=-1 --resume --run_name=wzx_test --headless
+- 注：如果不加 headless，那么会显示动态的试试trainning，显存一会儿就不够了
 #### 生成jit模型:
 ``` python scripts/export_policy_dh.py --task=x1_dh_stand --load_run=<date_time><run_name>  ```
 - jit模型会存在 ``` log/exported_policies/<date_time>```
